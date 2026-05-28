@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECS CI/CD Lab</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 50px 60px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge {
+      background: linear-gradient(90deg, #e94561, #0f3461);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #a8c0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px 30px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+
+    .info-card .label {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-card .value {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .metadata-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .metadata-box h3 {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .metadata-box pre {
+      color: #a8c0ff;
+      font-size: 0.75rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      overflow: auto;
+      max-height: 150px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="badge">AWS ECS Fargate</div>
+
+  <h1>ECS CI/CD Lab</h1>
+  <p class="subtitle">Containerized Java Web Application</p>
+
+  <div class="info-card">
+    <span class="label">Full Name</span>
+    <span class="value" th:text="${fullName}">Name</span>
+  </div>
+
+  <div class="info-card">
+    <span class="label">Lab Name</span>
+    <span class="value" th:text="${labName}">Lab</span>
+  </div>
+
+  <div class="metadata-box">
+    <h3>ECS Task Metadata</h3>
+    <pre th:text="${taskInfo}">Loading metadata...</pre>
+  </div>
+
+<!--  <div class="footer">-->
+<!--    Deployed via AWS CodePipeline &bull; Blue/Green Deployment-->
+<!--  </div>-->
+</div>
+</body>
+</html>
