@@ -12,9 +12,12 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # ─── Stage 2: Runtime ─────────────────────────────────────────
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
+
+# Install curl for health checks
+RUN apk add --no-cache curl
 
 # Create a non-root user for security
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
