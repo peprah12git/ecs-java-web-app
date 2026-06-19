@@ -37,3 +37,10 @@ jobs:
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
+      - name: Upload taskdef and appspec to S3
+        env:
+          ARTIFACT_BUCKET: ecs-java-web-app-artifacts-904233109505
+        run: |
+          zip source.zip taskdef.json appspec.yml
+          aws s3 cp source.zip s3://$ARTIFACT_BUCKET/templates/source.zip
