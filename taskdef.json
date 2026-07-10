@@ -4,8 +4,8 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::904233109505:role/ecs-java-web-app-task-execution-role",
-  "taskRoleArn": "arn:aws:iam::904233109505:role/ecs-java-web-app-task-role",
+  "executionRoleArn": "arn:aws:iam::885703011275:role/ecs-java-web-app-task-execution-role",
+  "taskRoleArn": "arn:aws:iam::885703011275:role/ecs-java-web-app-task-role",
   "containerDefinitions": [
     {
       "name": "ecs-java-web-app",

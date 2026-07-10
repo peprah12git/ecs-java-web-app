@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload taskdef and appspec to S3
         env:
-          ARTIFACT_BUCKET: ecs-java-web-app-artifacts-904233109505
+          ARTIFACT_BUCKET: ecs-java-web-app-artifacts-885703011275
         run: |
           zip source.zip taskdef.json appspec.yml
           aws s3 cp source.zip s3://$ARTIFACT_BUCKET/templates/source.zip
