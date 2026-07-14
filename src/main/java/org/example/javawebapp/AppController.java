@@ -13,7 +13,6 @@ public class AppController {
     public String index(Model model) {
         model.addAttribute("fullName", "Mensah Peprah Emmanuel");
         model.addAttribute("labName", "ECS CI/CD");
-        model.addAttribute("labName", "Text");
         model.addAttribute("taskInfo", getTaskMetadata());
         return "index";
     }
