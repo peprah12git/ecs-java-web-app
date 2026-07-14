@@ -12,7 +12,7 @@ public class AppController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("fullName", "Mensah Peprah Emmanuel");
-        model.addAttribute("labName", "ECS CI/CD");
+        model.addAttribute("labName", "New Lab name");
         model.addAttribute("taskInfo", getTaskMetadata());
         return "index";
     }
